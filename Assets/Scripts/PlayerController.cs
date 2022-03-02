@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         SetNewGridPos();
+        RotateTowardsTarget();
         //MovePlayer();
     }
 
@@ -44,6 +45,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RotateTowardsTarget()
+    {
+        transform.LookAt(targetPos, Vector3.up);
+    }
+
     private IEnumerator MovePlayer()
     {
         isMoving = true;
@@ -55,4 +61,6 @@ public class PlayerController : MonoBehaviour
         }
         isMoving = false;
     }
+
+
 }
