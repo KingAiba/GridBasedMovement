@@ -48,7 +48,7 @@ public class PlayerGrid : MonoBehaviour
         if (position.x < gridSize.x && position.z < gridSize.y && position.x >= 0 && position.z >= 0)
         {
             Node node = worldGrid[(int)position.x, (int)position.z];
-            Debug.Log(node.worldPosition);
+            //Debug.Log(node.worldPosition);
             return node.worldPosition;
         }
         
