@@ -13,6 +13,9 @@ public class PlayerGrid : MonoBehaviour
 
     public GameObject cubePrefabs;
 
+    public BirdTestScript bNameSpawner;
+
+
     public void InitializeGrid()
     {
         worldGrid = new Node[(int)gridSize.x, (int)gridSize.y];
@@ -21,7 +24,7 @@ public class PlayerGrid : MonoBehaviour
             for(int j = 0; j< (int)gridSize.y; j++)
             {
                 GameObject tempGM = Instantiate(cubePrefabs, new Vector3(i + (i * nodeSize), 0, j + (j * nodeSize)), cubePrefabs.transform.rotation);
-
+                bNameSpawner.MakeNameText(tempGM);
                 Node tempNode = tempGM.GetComponent<Node>();
                 tempNode.InitNode(new Vector2(i, j));
 
